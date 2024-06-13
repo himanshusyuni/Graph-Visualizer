@@ -1,5 +1,4 @@
 import {  useRef, useState } from "react";
-import picture from "../../public/images/graph.png";
 import { useNavigate } from "react-router-dom";
 function UserInput() {
   const [Vertex,setVetex]= useState(0);
@@ -63,9 +62,7 @@ function UserInput() {
             </div>
           </div>
           <div className="size-[40%]"> 
-            <img src={picture}   className="m-10"/>
-            
-
+            <img src="images/graph.png"   className="m-10"/>
          </div>
         </div>
       </div>

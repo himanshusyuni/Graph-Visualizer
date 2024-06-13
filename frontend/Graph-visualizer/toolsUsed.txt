@@ -3,3 +3,4 @@
 3. React icon library for github icon
 4. React router
 5. Brown color added in tailwind.css 
+6. Type animation for animated "Welcome to graph visualizer"
