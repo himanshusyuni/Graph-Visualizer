@@ -1,3 +1,5 @@
 1. "https://www.svgrepo.com" for svg "hello" and "graph pic"
 2. Google fonts for dancing script font
-3. React icong library for github icon
+3. React icon library for github icon
+4. React router
+5. Brown color added in tailwind.css 

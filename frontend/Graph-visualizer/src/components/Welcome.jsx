@@ -1,10 +1,13 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import { FaGithub } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Welcome = () => {
+  const navigate=useNavigate("");
+
   return (
-    <div className="bg-green-300 h-screen flex flex-col gap-24">
+    <div className="bg-green-300  flex flex-col gap-24">
       <div className="flex flex-col justify-center items-center gap-4">
         <div className="flex w-full justify-between px-8">
           <div className="mt-8">
@@ -56,7 +59,7 @@ const Welcome = () => {
           />
         </div>
         <div>
-          <button className="border border-black p-3 rounded-2xl bg-orange-900 text-2xl font-300  text-white">
+          <button className="border border-black p-3 rounded-2xl bg-orange-900 text-2xl font-300  text-white" onClick={()=> navigate("/input")}>
             Get Started
           </button>
         </div>
