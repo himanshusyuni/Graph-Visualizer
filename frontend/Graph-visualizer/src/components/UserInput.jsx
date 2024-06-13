@@ -1,5 +1,5 @@
 import {  useRef, useState } from "react";
-import picture from "../pictures/graph.png";
+import picture from "../../public/images/graph.png";
 import { useNavigate } from "react-router-dom";
 function UserInput() {
   const [Vertex,setVetex]= useState(0);
