@@ -1,0 +1,6 @@
+1. "https://www.svgrepo.com" for svg "hello" and "graph pic"
+2. Google fonts for dancing script font
+3. React icon library for github icon - npm install react-icons --save
+4. React router npm install react-router-dom
+5. Brown color added in tailwind.css 
+6. Type animation for animated "Welcome to graph visualizer"  npm i react-type-animation
