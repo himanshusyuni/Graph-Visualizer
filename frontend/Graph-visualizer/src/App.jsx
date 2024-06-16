@@ -7,12 +7,18 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path="/" element={
-            <div className="bg-gradient-to-r from-emerald-400 to-cyan-400 min-h-screen">
-            <WelcomeNav />
-            <Welcome />
-            </div>
-          } />
+          <Route
+            path="/"
+            element={
+              <div className="relative min-h-screen">
+                <div className="absolute bg-[url(images/Designer-3.png)] md:bg-center-bottom-30 sm:bg-center-bottom-20 bg-center bg-cover inset-0"></div>
+                <div className="relative z-10">
+                  <WelcomeNav />
+                  <Welcome />
+                </div>
+              </div>
+            }
+          />
           <Route path="/input" element={<UserInput />} />
           {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
