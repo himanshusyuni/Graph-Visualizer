@@ -6,6 +6,10 @@ export default {
       fontFamily: {
         "dancing-script": ["Dancing Script", "cursive"],
       },
+      backgroundPosition: {
+        "center-bottom-30": "center bottom 30%",
+        "center-bottom-20": "center bottom 20%",
+      },
       fontWeight: {
         400: "400",
         500: "500",
@@ -14,16 +18,16 @@ export default {
       },
       colors: {
         brown: {
-          '50': '#f9f4ee',
-          '100': '#f2e9d7',
-          '200': '#dfcfa9',
-          '300': '#cbb47b',
-          '400': '#b89a4d',
-          '500': '#a58020', 
-          '600': '#835e17',
-          '700': '#624712',
-          '800': '#41330d',
-          '900': '#201906',
+          50: "#f9f4ee",
+          100: "#f2e9d7",
+          200: "#dfcfa9",
+          300: "#cbb47b",
+          400: "#b89a4d",
+          500: "#a58020",
+          600: "#835e17",
+          700: "#624712",
+          800: "#41330d",
+          900: "#201906",
         },
       },
     },
