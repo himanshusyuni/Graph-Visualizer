@@ -8,7 +8,7 @@ function ProcessingPage() {
           <TypeAnimation
             className="font-mono font-bold text-4xl sm:text-5xl md:text-6xl lg:text-3xl text-center"
             sequence={[
-              // Same substring at the start will only be typed out once, initially
+             
               "Creating your graph...",
               1500,
             ]}

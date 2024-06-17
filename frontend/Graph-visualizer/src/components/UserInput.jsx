@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ProcessingPage from "./ProcessingPage";
-import Graph from "./Graph";
+import Graph from "./DemoGraph";
 function UserInput() {
   const [Vertex, setVetex] = useState(0);
   const [Type, setType] = useState(2);
@@ -74,7 +74,7 @@ function UserInput() {
               </button>
             </div>
           </div>
-          <div className="w-[500px]">
+          <div className="">
             {flag == 0 && <Graph />}
             {flag == 1 && <ProcessingPage />}
           </div>
