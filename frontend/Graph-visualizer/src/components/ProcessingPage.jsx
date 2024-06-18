@@ -1,6 +1,22 @@
 import { TypeAnimation } from "react-type-animation";
 import { HashLoader } from 'react-spinners';
-function ProcessingPage() {
+import { useEffect, useState } from "react";
+function ProcessingPage({flag,setFlag}) {
+  const [countDown, setCountDown] = useState(3);
+  useEffect(() => {
+    const TimeOut = setInterval(() => {
+      setCountDown((precnt) => {
+        if (precnt === 1) {
+          clearInterval(TimeOut);
+          setFlag(2);
+        }
+        return precnt - 1;
+      });
+    }, 1000);
+    return () => {
+      clearInterval(TimeOut);
+    };
+  }, [flag]);
   return (
     <>
       <div className="flex justify-center  mt-[40%] ml-10">

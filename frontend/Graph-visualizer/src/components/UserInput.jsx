@@ -1,17 +1,34 @@
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ProcessingPage from "./ProcessingPage";
-import Graph from "./DemoGraph";
+import DemoGraph from "./DemoGraph";
+import Graph from "./Graph";
+
 function UserInput() {
-  const [Vertex, setVetex] = useState(0);
+  const [Vertex, setVertex] = useState(1);
   const [Type, setType] = useState(2);
-  const edgeList = useRef();
+  const edgeList = useRef([]);
   const navigate = useNavigate("");
   const [flag, setFlag] = useState(0);
+
+
+  const handleVertex= (e)=>{
+    if(e.target.value <=0 || e.target.value >10){
+      alert("Vertex should be in range [1,10]");
+      setVertex(1);
+    }
+    else{
+      setVertex(e.target.value);
+    }
+  }
+
+  const edgggeList=[]
+
   const [toggle, setToggle] = useState(0);
   const handleToggle = () => {
     setToggle((toggle+1)%2);
   }
+
   return (
     <>
       <div className="bg-blue-200 ">
@@ -29,13 +46,13 @@ function UserInput() {
               </div>
               <div className="flex pt-5 pl-10">
                 <p className="pr-5 text-2xl font-semibold">
-                  Number of Vertex (Max upto 15) :
+                  Number of Vertex (Max upto 10) :
                 </p>
                 <input
                   type="number"
                   value={Vertex}
                   className="w-14 text-2xl border-2 border-black focus:border-0"
-                  onChange={(e) => setVetex(e.target.value)}
+                  onChange={(e) => handleVertex(e)}
                 ></input>
               </div>
               <div className="flex pt-8 pl-10">
@@ -46,7 +63,7 @@ function UserInput() {
                   }`}
                   onClick={() => setType(0)}
                 >
-                  Undirected
+                  Weighted
                 </button>
                 <button
                   className={`bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded active:bg-yellow-700 ml-5  ${
@@ -54,7 +71,7 @@ function UserInput() {
                   }`}
                   onClick={() => setType(1)}
                 >
-                  Directed
+                  Unweighted
                 </button>
               </div>
               <div className="flex pl-10 pt-8">
@@ -85,8 +102,9 @@ function UserInput() {
             </div>
           </div>
           <div className="">
-            {flag == 0 && <Graph />}
-            {flag == 1 && <ProcessingPage />}
+            {flag == 0 && <DemoGraph />}
+            {flag == 1 && <ProcessingPage flag={flag} setFlag={setFlag}/>}
+            {flag == 2 && <Graph V={Vertex} edge={edgggeList} />}
           </div>
         </div>
       </div>
