@@ -10,6 +10,9 @@ export default {
         "center-bottom-30": "center bottom 30%",
         "center-bottom-20": "center bottom 20%",
       },
+      scale: {
+        102: "1.02",
+      },
       fontWeight: {
         400: "400",
         500: "500",
