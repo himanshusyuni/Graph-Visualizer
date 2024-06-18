@@ -1,5 +1,5 @@
 import { TypeAnimation } from "react-type-animation";
-
+import { HashLoader } from 'react-spinners';
 function ProcessingPage() {
   return (
     <>
@@ -17,7 +17,14 @@ function ProcessingPage() {
             repeat={2}
           />
         </div>
+       
       </div>{" "}
+      <center>
+      <div  style={{ marginLeft: '20px' }} className="mt-5">
+        <HashLoader color="#36d7b7" />
+      </div>
+      </center>
+      
     </>
   );
 }
