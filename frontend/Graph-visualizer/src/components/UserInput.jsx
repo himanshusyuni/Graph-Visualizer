@@ -11,6 +11,7 @@ function UserInput() {
   const navigate = useNavigate("");
   const [flag, setFlag] = useState(0);
 
+
   const handleVertex= (e)=>{
     if(e.target.value <=0 || e.target.value >10){
       alert("Vertex should be in range [1,10]");
@@ -22,6 +23,12 @@ function UserInput() {
   }
 
   const edgggeList=[]
+
+  const [toggle, setToggle] = useState(0);
+  const handleToggle = () => {
+    setToggle((toggle+1)%2);
+  }
+
   return (
     <>
       <div className="bg-blue-200 ">
@@ -31,6 +38,12 @@ function UserInput() {
         <div className=" flex ml-10 ">
           <div className="w-[550px] mr-10">
             <div>
+              <div className="flex justify-center">
+                <div className="bg-teal-900 flex gap-3 px-3 py-2 rounded-full text-[1.1rem] text-white font-bold">
+                  <div className={(toggle===0 && `bg-green-300 py-2 px-10 rounded-3xl hover:cursor-pointer text-black`) || (`py-2 px-10 rounded-3xl hover:cursor-pointer`)} onClick={()=>handleToggle()}>Input</div>
+                  <div className={(toggle===1 && `bg-green-300 py-2 px-10 rounded-3xl hover:cursor-pointer text-black`) || (`py-2 px-10 rounded-3xl hover:cursor-pointer`)} onClick={()=>handleToggle()}>Algos</div>
+                </div>
+              </div>
               <div className="flex pt-5 pl-10">
                 <p className="pr-5 text-2xl font-semibold">
                   Number of Vertex (Max upto 10) :
