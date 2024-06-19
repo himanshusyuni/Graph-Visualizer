@@ -37,7 +37,7 @@ function ProcessingPage({flag,setFlag}) {
       </div>{" "}
       <center>
       <div  style={{ marginLeft: '20px' }} className="mt-5">
-        <HashLoader color="#36d7b7" />
+        <HashLoader color="red" />
       </div>
       </center>
       
