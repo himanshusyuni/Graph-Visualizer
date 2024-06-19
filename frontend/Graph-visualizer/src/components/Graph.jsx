@@ -329,12 +329,13 @@ function Graph({ V, edge }) {
       ],
     },
   ];
+  console.log(edge);
 
   const vertexArray=shape.filter((it)=> it.vertNo == V)[0].value;
   return <>
-  <div className="relative">
+  <div className="absolute ml-10 mt-5">
     {vertexArray.map((items)=> <Vertex no={items.no} x={items.x} y={items.y} key={items.no} />)}
-    {edge.map((item,ind) => (
+    {edge.length !=1 &&  edge.map((item,ind) => (
           <LabeledLine
             x1={vertexArray.filter((items) => items.no == item.u)[0].x + 20}
             x2={vertexArray.filter((items) => items.no == item.v)[0].x + 20}
