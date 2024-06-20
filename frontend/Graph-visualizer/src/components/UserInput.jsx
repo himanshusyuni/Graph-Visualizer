@@ -15,7 +15,7 @@ function UserInput() {
   const handleVertex = (e) => {
     if (e.target.value <= 0 || e.target.value > 10) {
       alert("Vertex should be in range [1,10]");
-      setVertex(1);
+      setVertex(10);
     } else {
       setVertex(e.target.value);
     }
@@ -23,19 +23,20 @@ function UserInput() {
   const [arr, setEdgeList] = useState([]);
   const handleCreate = () => {
     setFlag(1);
+    setEdgeList([]);
     const edgeListArray = edgeList.current.value.split("\n");
     edgeListArray.forEach((edge) => {
-      const [uu, vv] = edge.split(" ");
+      const [uu, vv,ww] = edge.split(" ");
       if (Type == 0) {
-        const [v1, v2, w] = [parseInt(uu), parseInt(vv), parseInt(1)];
+        const [v1, v2, w1] = [parseInt(uu), parseInt(vv), parseInt(ww)];
         setEdgeList((prev) => {
-          const newtemp = [...prev, { u: v1, v: v2, w: 0 }];
+          const newtemp = [...prev, { u: v1, v: v2, w: w1 }];
           return newtemp;
         });
       } else {
         const [v1, v2] = [parseInt(uu), parseInt(vv)];
         setEdgeList((prev) => {
-          const newtemp = [...prev, { u: v1, v: v2, w: 0 }];
+          const newtemp = [...prev, { u: v1, v: v2, w:0 }];
           return newtemp;
         });
       }
@@ -49,7 +50,7 @@ function UserInput() {
 
   return (
     <>
-      <div className="bg-teal-400 pb-10 min-h-screen flex flex-col items-center lg:items-start ">
+      <div className="bg-teal-400 pb-10 min-h-screen flex flex-col items-center lg:items-start">
         <div className="font-bold text-center text-4xl font-serif underline mb-5 bg-teal-600 p-5 italic w-full">
           Graph Visualizer
         </div>
@@ -150,7 +151,7 @@ function UserInput() {
             <div className="absolute border-4 bg-teal-600 border-teal-800 h-[40rem] lg:w-[37rem] w-[45rem]  rounded-3xl">
               {flag == 0 && <DemoGraph />}
               {flag == 1 && <ProcessingPage flag={flag} setFlag={setFlag} />}
-              {flag == 2 && <Graph V={Vertex} edge={arr} />}
+              {flag == 2 && <Graph V={Vertex} edge={arr}  type={Type}/>}
             </div>
           </div>
         </div>
