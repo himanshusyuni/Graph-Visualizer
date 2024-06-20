@@ -4,12 +4,14 @@ import ProcessingPage from "./ProcessingPage";
 import DemoGraph from "./DemoGraph";
 import Graph from "./Graph";
 import TempAlgo from "./TempAlgo";
+import Algorithm from "./Algorithm";
 
 function UserInput() {
   const [Vertex, setVertex] = useState(1);
   const [Type, setType] = useState(0);
   const edgeList = useRef([]);
   const navigate = useNavigate("");
+  const [Algono , setAlgono]= useState(5);
   const [flag, setFlag] = useState(0);
 
   const handleVertex = (e) => {
@@ -143,7 +145,7 @@ function UserInput() {
                   </div>
                 </>
               )}
-              {toggle == 1 && <TempAlgo />}
+              {toggle == 1 && <TempAlgo setAlgono={setAlgono} setFlag={setFlag} />}
             </div>
           </div>
 
@@ -151,7 +153,8 @@ function UserInput() {
             <div className="absolute border-4 bg-teal-600 border-teal-800 h-[40rem] lg:w-[37rem] w-[45rem]  rounded-3xl">
               {flag == 0 && <DemoGraph />}
               {flag == 1 && <ProcessingPage flag={flag} setFlag={setFlag} />}
-              {flag == 2 && <Graph V={Vertex} edge={arr}  type={Type}/>}
+              {flag == 2 && <Graph V={Vertex} edge={arr}  type={Type} />}
+              {flag == 4 && <Algorithm  V={Vertex} edge= {arr} Algono={Algono} type={Type} /> }
             </div>
           </div>
         </div>

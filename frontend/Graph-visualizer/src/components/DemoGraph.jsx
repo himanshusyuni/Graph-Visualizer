@@ -49,7 +49,7 @@ function DemoGraph() {
     <>
       <div className="relative mt-[10%] ml-[5%] ">
         {vertex.map((item) => (
-          <Vertex x={item.x} y={item.y} no={item.no} key={item.no} />
+          <Vertex x={item.x} y={item.y} no={item.no} key={item.no}  colInd={0}/>
         ))}
 
         {edges.map((item,ind) => (
