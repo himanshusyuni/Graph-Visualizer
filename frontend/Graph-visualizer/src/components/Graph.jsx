@@ -334,7 +334,7 @@ function Graph({ V, edge,type }) {
   const vertexArray=shape.filter((it)=> it.vertNo == V)[0].value;
   return <>
   <div className="absolute lg:ml-[10%]  lg:mt-[10%] md:ml-[20%] mt-[10%]">
-    {vertexArray.map((items)=> <Vertex no={items.no} x={items.x} y={items.y} key={items.no} />)}
+    {vertexArray.map((items)=> <Vertex no={items.no} x={items.x} y={items.y} key={items.no} colInd={0} />)}
     {edge.map((item, ind) => {
     const vertexU = vertexArray.find((v) => v.no === item.u);
     const vertexV = vertexArray.find((v) => v.no === item.v);

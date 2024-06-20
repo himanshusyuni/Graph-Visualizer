@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const TempAlgo = () => {
+const TempAlgo = ({setAlgono,setFlag}) => {
   const navigate = useNavigate();
   const algo_names = [
     {
@@ -21,15 +21,11 @@ const TempAlgo = () => {
       link: "https://www.geeksforgeeks.org/strongly-connected-components/",
     },
   ];
-
   return (
     <>
       <div className="flex justify-center mt-8 h-[30rem]">
         <div className="bg-green-300 py-5 px-2 overflow-auto overflow-x-auto flex flex-col gap-5 h-[30rem] w-[40rem]">
-          {/* <h1 className="text-xl px-2 text-yellow-400 font-medium ">
-           Graph Algorithms and their corresponding graphs
-          </h1> */}
-          {algo_names.map((items) => (
+          {algo_names.map((items,ind) =>(
             <div className="bg-green-600 rounded-2xl hover:scale-102 duration-200">
               <div className="bg-green-600 px-8 py-5 rounded-xl text-[1.3rem] text-black  font-semibold">
                 <p>{items.name}</p>
@@ -38,7 +34,9 @@ const TempAlgo = () => {
                 <a href={items.link} target="_blank">
                   <div className="bg-yellow-400 px-4 py-1 rounded-lg font-semibold">Learn</div>
                 </a>
-                <div className="bg-gray-300 px-4 py-1 rounded-lg font-semibold hover:cursor-pointer">View Graph</div>
+                <div className="bg-gray-300 px-4 py-1 rounded-lg font-semibold hover:cursor-pointer" onClick={()=>{setAlgono(ind);
+                  setFlag(4);
+                }} >View Graph</div>
               </div>
             </div>
           ))}
