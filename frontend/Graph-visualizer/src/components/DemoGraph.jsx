@@ -47,7 +47,7 @@ function DemoGraph() {
   ];
   return (
     <>
-      <div className="relative  ">
+      <div className="relative">
         {vertex.map((item) => (
           <Vertex x={item.x} y={item.y} no={item.no} key={item.no} />
         ))}

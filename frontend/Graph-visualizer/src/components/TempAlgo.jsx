@@ -24,17 +24,23 @@ const TempAlgo = () => {
 
   return (
     <>
-      <div className="min-h-screen flex justify-center items-center ">
-        <div className="bg-green-300 p-5 overflow-auto overflow-x-auto flex flex-col gap-5 h-[35rem] w-[35rem]">
+      <div className="flex justify-center mt-8 h-[30rem]">
+        <div className="bg-green-300 py-5 px-2 overflow-auto overflow-x-auto flex flex-col gap-5 h-[30rem] w-[40rem]">
           {/* <h1 className="text-xl px-2 text-yellow-400 font-medium ">
            Graph Algorithms and their corresponding graphs
           </h1> */}
           {algo_names.map((items) => (
-            <a href={items.link} target="_blank">
-              <div className="bg-green-600 px-5 py-5 rounded-xl text-[1.3rem] text-black hover:scale-102 duration-200 hover:cursor-pointer font-semibold">
+            <div className="bg-green-600 rounded-2xl hover:scale-102 duration-200">
+              <div className="bg-green-600 px-8 py-5 rounded-xl text-[1.3rem] text-black  font-semibold">
                 <p>{items.name}</p>
               </div>
-            </a>
+              <div className="px-8 flex justify-between mb-4 text-[1.1rem]">
+                <a href={items.link} target="_blank">
+                  <div className="bg-yellow-400 px-4 py-1 rounded-lg font-semibold">Learn</div>
+                </a>
+                <div className="bg-gray-300 px-4 py-1 rounded-lg font-semibold hover:cursor-pointer">View Graph</div>
+              </div>
+            </div>
           ))}
         </div>
       </div>
