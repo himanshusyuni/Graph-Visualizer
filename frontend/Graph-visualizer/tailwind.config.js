@@ -4,7 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "dancing-script": ["Dancing Script", "cursive"],
+        "dancing-script": ["Dancing script", "cursive"],
+        "Noto-serif": ["Noto Serif", "serif"],
       },
       backgroundPosition: {
         "center-bottom-30": "center bottom 30%",

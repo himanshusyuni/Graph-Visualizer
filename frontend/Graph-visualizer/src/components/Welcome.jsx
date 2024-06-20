@@ -13,7 +13,7 @@ const Welcome = () => {
 
       <div className="px-4 flex justify-center mt-6">
         <TypeAnimation
-          className="font-dancing-script font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-center"
+          className="font-Noto-serif font-bold text-3xl sm:text-5xl lg:text-6xl text-center"
           sequence={[
             // Same substring at the start will only be typed out once, initially
             "Welcome to Graph Visualizer",
@@ -27,15 +27,15 @@ const Welcome = () => {
 
       <div className="flex flex-col justify-center items-center mt-8 gap-8">
         <div className="px-7 ">
-          <h1 className="text-[2rem] sm:text-[2.5rem] md:text-[2.8rem] lg:text-[3rem] font-bold font-dancing-script text-center leading-10">
+          <h1 className=" text-[1.5rem] sm:text-[2rem] lg:text-[2.2rem] font-bold font-Noto-serif text-center leading-10">
             Create and visualize graphs effortlessly
           </h1>
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-center mt-1 md:gap-32 lg:mb-10">
+        <div className="flex flex-col md:flex-row items-center justify-center mt-1 md:gap-32 mb-10">
           <button
             className="border border-black py-4 px-5 rounded-full  
-            bg-gradient-to-r from-teal-600 to-teal-800 sm:text-[1.2rem] text-[1.1rem] md:text-[1.3rem] font-300  text-white mt-10"
+            bg-gradient-to-r from-teal-600 to-teal-800 sm:text-[1.2rem] text-[0.7rem] md:text-[1.1rem] font-300  text-white mt-10"
             onClick={() => navigate("/input")}
           >
             GET STARTED
