@@ -47,9 +47,9 @@ function DemoGraph() {
   ];
   return (
     <>
-      <div className="relative ">
+      <div className="relative mt-[10%] ml-[5%] ">
         {vertex.map((item) => (
-          <Vertex x={item.x} y={item.y} no={item.no} key={item.no} />
+          <Vertex x={item.x} y={item.y} no={item.no} key={item.no}  colInd={0}/>
         ))}
 
         {edges.map((item,ind) => (
@@ -58,7 +58,7 @@ function DemoGraph() {
             x2={vertex.filter((items) => items.no == item.v)[0].x + 20}
             y1={vertex.filter((items) => items.no == item.u)[0].y + 20}
             y2={vertex.filter((items) => items.no == item.v)[0].y + 20}
-            color={"brown"}
+            color={"yellow"}
             key={ind}
           />
         ))}
