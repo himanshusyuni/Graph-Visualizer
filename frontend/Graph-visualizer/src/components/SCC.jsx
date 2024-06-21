@@ -54,7 +54,7 @@ function SCC() {
   const vertexArray = shape.filter((it) => it.vertNo == V)[0].value;
   return (
     <>
-      <div className="absolute lg:ml-[10%]  lg:mt-[10%] md:ml-[20%] mt-[10%]">
+      <div className="absolute lg:ml-[10%]  lg:mt-[10%] md:ml-[20%] mt-[10%] xlg:ml-[6%] xlg:mt-[6%]">
         {vertexArray.map((items) => (
           <Vertex
             no={items.no}

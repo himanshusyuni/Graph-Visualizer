@@ -10,14 +10,14 @@ import StoreContext from "../Store/StoreContext";
 function UserInput() {
   const edgeList = useRef([]);
   const navigate = useNavigate("");
-  const Vertex= useContext(StoreContext).Vertex;
+  const Vertex = useContext(StoreContext).Vertex;
   const setVertex = useContext(StoreContext).setVertex;
-  const Type=useContext(StoreContext).type;
+  const Type = useContext(StoreContext).type;
   const setType = useContext(StoreContext).setType;
-  const Edges=useContext(StoreContext).Edges;
+  const Edges = useContext(StoreContext).Edges;
   const setEdges = useContext(StoreContext).setEdges;
-  const CompToShow= useContext(StoreContext).CompToShow;
-  const setComp= useContext(StoreContext).setComp;
+  const CompToShow = useContext(StoreContext).CompToShow;
+  const setComp = useContext(StoreContext).setComp;
 
   const handleVertex = (e) => {
     if (e.target.value <= 0 || e.target.value > 10) {
@@ -27,13 +27,13 @@ function UserInput() {
       setVertex(e.target.value);
     }
   };
-  
+
   const handleCreate = () => {
     setComp("Process");
     setEdges([]);
     const edgeListArray = edgeList.current.value.split("\n");
     edgeListArray.forEach((edge) => {
-      const [uu, vv,ww] = edge.split(" ");
+      const [uu, vv, ww] = edge.split(" ");
       if (Type == 0) {
         const [v1, v2, w1] = [parseInt(uu), parseInt(vv), parseInt(ww)];
         setEdges((prev) => {
@@ -43,7 +43,7 @@ function UserInput() {
       } else {
         const [v1, v2] = [parseInt(uu), parseInt(vv)];
         setEdges((prev) => {
-          const newtemp = [...prev, { u: v1, v: v2, w:0 }];
+          const newtemp = [...prev, { u: v1, v: v2, w: 0 }];
           return newtemp;
         });
       }
@@ -57,19 +57,19 @@ function UserInput() {
 
   return (
     <>
-      <div className="bg-teal-400 pb-10 min-h-screen flex flex-col items-center lg:items-start">
-        <div className="font-bold text-center text-4xl font-serif underline mb-5 bg-teal-600 p-5 italic w-full">
+      <div className="bg-[#fbfae5] pb-10 min-h-screen flex flex-col items-center lg:items-start">
+        <div className="font-bold text-center text-[#00d0aa]  bg-[#0b2834] text-[2rem] font-serif underline mb-5 p-5 italic w-full">
           Graph Visualizer
         </div>
-        <div className="flex flex-col lg:flex-row px-10 bg-teal-400 min-h-screen gap-10 lg:gap-0">
-          <div className="w-[45rem] mr-10 bg-teal-900 p-3  flex flex-col gap-5 h-[40rem] rounded-3xl ">
-            <div className="bg-green-300 p-2 rounded-3xl h-[40rem]">
+        <div className="flex flex-col items-center xlg:flex-row px-10 w-full min-h-screen gap-10 xlg:gap-10 xlg:justify-between xlg:items-start">
+          <div className="w-[30rem] md:w-[45rem] xlg:w-[40rem]  flex flex-col gap-5 h-[30rem] md:h-[40rem] rounded-3xl border-[0.3rem]  border-teal-950 overflow-auto">
+            <div className="bg-[#fbfae5] p-2 h-[40rem]">
               <div className="flex justify-center mt-4">
-                <div className="bg-teal-900 flex gap-3 px-3 py-2 rounded-full text-[1.1rem] text-white font-bold">
+                <div className="bg-gradient-to-r from-teal-900 to-teal-600 flex gap-3 px-3 py-2 rounded-full border-2 border-black text-[0.8rem] md:text-[1.1rem] text-white font-bold">
                   <div
                     className={
                       (toggle === 0 &&
-                        `bg-green-300 py-2 px-10 rounded-3xl hover:cursor-pointer text-black`) ||
+                        `bg-gradient-to-r from-emerald-400 to-teal-600 py-2 px-10 rounded-3xl hover:cursor-pointer text-black`) ||
                       `py-2 px-10 rounded-3xl hover:cursor-pointer`
                     }
                     onClick={() => handleToggle()}
@@ -79,7 +79,7 @@ function UserInput() {
                   <div
                     className={
                       (toggle === 1 &&
-                        `bg-green-300 py-2 px-10 rounded-3xl hover:cursor-pointer text-black`) ||
+                        `bg-gradient-to-r from-emerald-400 to-teal-600 py-2 px-10 rounded-3xl hover:cursor-pointer text-black`) ||
                       `py-2 px-10 rounded-3xl hover:cursor-pointer`
                     }
                     onClick={() => handleToggle()}
@@ -91,41 +91,45 @@ function UserInput() {
               {toggle == 0 && (
                 <>
                   <div className="flex pt-10 pl-2 ">
-                    <p className="pr-5 text-2xl font-semibold">
+                    <p className="pr-5 text-[1.2rem] md:text-[1.5rem] text-[#2a3b68] bg-clip-text text-transparent  font-semibold">
                       Number of Vertex (Max upto 10) :
                     </p>
                     <input
                       type="number"
                       value={Vertex}
-                      className="w-[5rem] text-[1.2rem] border-2 border-black focus:border-0 pl-2 rounded-md"
+                      className="w-[5rem] text-[1.2rem] border-2 border-teal-700 bg-gradient-to-r from-teal-400 to-yellow-200 focus:border-0 pl-2 rounded-md"
                       onChange={(e) => handleVertex(e)}
                     ></input>
                   </div>
                   <div className="flex pt-8 pl-2">
-                    <p className="pr-5 text-2xl font-semibold">
+                    <p className="pr-5 text-[1.2rem] md:text-[1.5rem] text-[#2a3b68] bg-clip-text text-transparent  font-semibold">
                       Type of Graph :{" "}
                     </p>
-                    <button
-                      className={`bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-2xl active:bg-yellow-700 ${
-                        Type == 0 && "bg-yellow-700 hover:bg-yellow-700"
-                      }`}
-                      onClick={() => setType(0)}
-                    >
-                      Weighted
-                    </button>
-                    <button
-                      className={`bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-2xl active:bg-yellow-700 ml-5  ${
-                        Type == 1 && "bg-yellow-700 hover:bg-yellow-700"
-                      }`}
-                      onClick={() => setType(1)}
-                    >
-                      Unweighted
-                    </button>
+                    <div class="flex border-[0.15rem] border-teal-700 bg-[#fbfae5] rounded-md overflow-hidden">
+                      <button
+                        className={` text-black font-bold p-2 border-r-2 border-black  active:bg-gradient-to-r from-emerald-400 to-teal-600 ${
+                          Type == 0 && "bg-gradient-to-r from-emerald-400 to-teal-600"
+                        } `}
+                        onClick={() => setType(0)}
+                      >
+                        Weighted
+                      </button>
+                      <button
+                        className={` text-black font-bold p-2  active:bg-gradient-to-r from-emerald-400 to-teal-600 ${
+                          Type == 1 && "bg-gradient-to-r from-emerald-400 to-teal-600"
+                        }  `}
+                        onClick={() => setType(1)}
+                      >
+                        Unweighted
+                      </button>
+                    </div>
                   </div>
                   <div className="flex pl-2 pt-8">
-                    <p className="pr-5 text-2xl font-semibold">Edge List: </p>
+                    <p className="pr-5 text-[1.2rem] md:text-[1.5rem] text-[#2a3b68]  font-semibold">
+                      Edge List:{" "}
+                    </p>
                     <textarea
-                      className="resize-none rounded-2xl text-lg p-2 bg-slate-50 border-2 border-black focus:border-0 w-[60%]"
+                      className="resize-none rounded-2xl text-lg p-2 bg-gradient-to-r from-teal-400 to-yellow-200 border-[0.18rem] border-teal-700 outline-none w-[60%] placeholder-gray-500"
                       rows={5}
                       cols={30}
                       ref={edgeList}
@@ -136,13 +140,13 @@ function UserInput() {
 
                   <div className="flex justify-between m-5 mt-20">
                     <button
-                      className="bg-brown-500 hover:bg-brown-600 text-white font-bold py-2 text-2xl px-8 rounded-2xl active:bg-red-600"
+                      className="bg-[#0b2834] text-white font-bold py-2 text-2xl px-8 rounded-2xl border-2 border-teal-950"
                       onClick={() => navigate("/")}
                     >
                       Back
                     </button>
                     <button
-                      className="hover:bg-green-700 text-white text-2xl font-bold py-2 px-8 rounded-2xl bg-green-600 active:bg-yellow-700"
+                      className="bg-[#0b2834] text-white text-2xl font-bold py-2 px-8 rounded-2xl border-2 border-teal-950"
                       onClick={() => handleCreate()}
                     >
                       Create
@@ -150,16 +154,16 @@ function UserInput() {
                   </div>
                 </>
               )}
-              {toggle == 1 && <TempAlgo  />}
+              {toggle == 1 && <TempAlgo />}
             </div>
           </div>
 
-          <div className="min-h-screen">
-            <div className="absolute border-4 bg-teal-600 border-teal-800 h-[40rem] lg:w-[37rem] w-[45rem]  rounded-3xl">
+          <div className="min-h-screen ">
+            <div className=" border-4 border-black bg-gradient-to-r from-teal-900 to-teal-600 h-[30rem] md:h-[40rem] xlg:w-[40rem] md:w-[45rem] w-[30rem] rounded-3xl ">
               {CompToShow === "Demo" && <DemoGraph />}
               {CompToShow == "Process" && <ProcessingPage />}
               {CompToShow === "Graph" && <Graph />}
-              {CompToShow === "Algo" && <Algorithm /> }
+              {CompToShow === "Algo" && <Algorithm />}
             </div>
           </div>
         </div>
