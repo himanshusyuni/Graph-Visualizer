@@ -3,7 +3,6 @@ import UserInput from "./components/UserInput";
 import Welcome from "./components/Welcome";
 import WelcomeNav from "./components/WelcomeNav";
 import TempAlgo from "./components/TempAlgo";
-
 function App() {
   return (
     <>
@@ -24,7 +23,7 @@ function App() {
           <Route path="/input" element={<UserInput />} />
         
           <Route path="/algos" element={<TempAlgo />} />
-        
+
         </Routes>
       </Router>
     </>
