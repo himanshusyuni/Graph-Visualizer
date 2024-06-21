@@ -3,7 +3,7 @@ import UserInput from "./components/UserInput";
 import Welcome from "./components/Welcome";
 import WelcomeNav from "./components/WelcomeNav";
 import TempAlgo from "./components/TempAlgo";
-import Djkstra from "./components/Algos/Djkstra";
+// import Djkstra from "./components/Algos/Djkstra";
 function App() {
   return (
     <>
@@ -24,7 +24,7 @@ function App() {
           <Route path="/input" element={<UserInput />} />
           {/* <Route path="*" element={<NotFound />} /> */}
           <Route path="/algos" element={<TempAlgo />} />
-          <Route path="/algos/djkstra" element={<Djkstra />} />
+          {/* <Route path="/algos/djkstra" element={<Djkstra />} /> */}
         </Routes>
       </Router>
     </>

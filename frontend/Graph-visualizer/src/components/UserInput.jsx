@@ -31,20 +31,23 @@ function UserInput() {
 
   return (
     <>
-      <div className="bg-blue-200 ">
-        <div className="font-bold text-center text-4xl pt-8 underline text-amber-900 mb-10 ">
-          Provide Details to create your graph : )
+      <div className=" bg-yellow-500 h-full w-full flex flex-col "  >
+        <div className="font-bold text-center text-4xl  underline text-rose-900 mb-8 mt-2 flex flex col justify-center items-center shadow-lg ">
+               Provide Details to create your graph
+                <img className="h-11 w-16 mx-1 "
+          src="pic1.svg" alt="" /> 
+          
         </div>
-        <div className=" flex ml-10 ">
-          <div className="w-[550px] mr-10">
+        <div className=" flex ml-4 ">
+          <div className="w-[550px] mr-4">
             <div>
               <div className="flex justify-center">
-                <div className="bg-teal-900 flex gap-3 px-3 py-2 rounded-full text-[1.1rem] text-white font-bold">
+                <div className="bg-teal-900 flex gap-3 px-3 py-2 rounded-full text-[1.1rem] text-white font-bold shadow-lg">
                   <div className={(toggle===0 && `bg-green-300 py-2 px-10 rounded-3xl hover:cursor-pointer text-black`) || (`py-2 px-10 rounded-3xl hover:cursor-pointer`)} onClick={()=>handleToggle()}>Input</div>
                   <div className={(toggle===1 && `bg-green-300 py-2 px-10 rounded-3xl hover:cursor-pointer text-black`) || (`py-2 px-10 rounded-3xl hover:cursor-pointer`)} onClick={()=>handleToggle()}>Algos</div>
                 </div>
               </div>
-              <div className="flex pt-5 pl-10">
+              <div className="flex pt-5 pl-10 shadow-lg ">
                 <p className="pr-5 text-2xl font-semibold">
                   Number of Vertex (Max upto 10) :
                 </p>
@@ -55,29 +58,29 @@ function UserInput() {
                   onChange={(e) => handleVertex(e)}
                 ></input>
               </div>
-              <div className="flex pt-8 pl-10">
-                <p className="pr-5 text-2xl font-semibold">Type of Graph : </p>
+              <div className="flex pt-8 pl-10 shadow-lg ">
+                <p className="pr-5 text-2xl font-semibold ">Type of Graph : </p>
                 <button
-                  className={`bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded active:bg-yellow-700 ${
-                    Type == 0 && "bg-yellow-700 hover:bg-yellow-700"
+                  className={`bg-teal-900 hover:bg-emerald-500 text-white font-bold py-2 px-4 rounded active:bg-yellow-700 shadow-lg  ${
+                    Type == 1 && "bg-teal-900 hover:bg-emerald-500"
                   }`}
                   onClick={() => setType(0)}
                 >
                   Weighted
                 </button>
                 <button
-                  className={`bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded active:bg-yellow-700 ml-5  ${
-                    Type == 1 && "bg-yellow-700 hover:bg-yellow-700"
+                  className={`bg-teal-900 hover:bg-emerald-950 text-white font-bold py-2 px-4 rounded active:bg-yellow-700 ml-5  ${
+                    Type == 1 && "bg-teal-900 hover:bg-emerald-500"
                   }`}
                   onClick={() => setType(1)}
                 >
                   Unweighted
                 </button>
               </div>
-              <div className="flex pl-10 pt-8">
+              <div className="flex pl-10 pt-8 shadow-lg">
                 <p className="pr-5 text-2xl font-semibold">Edge List : </p>
                 <textarea
-                  className="resize-none  text-lg p-2 bg-slate-50 border-2 border-black focus:border-0"
+                  className="resize-none  text-lg p-2 bg-slate-50 border-2 border-black focus:border-0 "
                   rows={5}
                   cols={30}
                   ref={edgeList}
@@ -86,15 +89,15 @@ function UserInput() {
                 ></textarea>
               </div>
             </div>
-            <div className="flex justify-between m-5 mt-20">
+            <div className="flex justify-between m-5 mt-5 shadow-lg">
               <button
-                className="bg-brown-500 hover:bg-brown-600 text-white font-bold py-2 text-2xl px-4 rounded active:bg-red-600"
+                className="bg-teal-900 hover:bg-emeral-500 text-white font-bold py-2 text-2xl px-4 rounded active:bg-yellow-700"
                 onClick={() => navigate("/")}
               >
                 Back
               </button>
               <button
-                className="hover:bg-green-700 text-white text-2xl font-bold py-2 px-4 rounded bg-green-600 active:bg-yellow-700"
+                className="hover:bg-emerald-500 text-white text-2xl font-bold py-2 px-4 rounded bg-teal-900 active:bg-yellow-700"
                 onClick={() => setFlag(1)}
               >
                 Create
