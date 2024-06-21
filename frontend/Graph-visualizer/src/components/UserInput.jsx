@@ -1,18 +1,23 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ProcessingPage from "./ProcessingPage";
 import DemoGraph from "./DemoGraph";
 import Graph from "./Graph";
 import TempAlgo from "./TempAlgo";
 import Algorithm from "./Algorithm";
+import StoreContext from "../Store/StoreContext";
 
 function UserInput() {
-  const [Vertex, setVertex] = useState(1);
-  const [Type, setType] = useState(0);
   const edgeList = useRef([]);
   const navigate = useNavigate("");
-  const [Algono , setAlgono]= useState(5);
-  const [flag, setFlag] = useState(0);
+  const Vertex= useContext(StoreContext).Vertex;
+  const setVertex = useContext(StoreContext).setVertex;
+  const Type=useContext(StoreContext).type;
+  const setType = useContext(StoreContext).setType;
+  const Edges=useContext(StoreContext).Edges;
+  const setEdges = useContext(StoreContext).setEdges;
+  const CompToShow= useContext(StoreContext).CompToShow;
+  const setComp= useContext(StoreContext).setComp;
 
   const handleVertex = (e) => {
     if (e.target.value <= 0 || e.target.value > 10) {
@@ -22,29 +27,29 @@ function UserInput() {
       setVertex(e.target.value);
     }
   };
-  const [arr, setEdgeList] = useState([]);
+  
   const handleCreate = () => {
-    setFlag(1);
-    setEdgeList([]);
+    setComp("Process");
+    setEdges([]);
     const edgeListArray = edgeList.current.value.split("\n");
     edgeListArray.forEach((edge) => {
       const [uu, vv,ww] = edge.split(" ");
       if (Type == 0) {
         const [v1, v2, w1] = [parseInt(uu), parseInt(vv), parseInt(ww)];
-        setEdgeList((prev) => {
+        setEdges((prev) => {
           const newtemp = [...prev, { u: v1, v: v2, w: w1 }];
           return newtemp;
         });
       } else {
         const [v1, v2] = [parseInt(uu), parseInt(vv)];
-        setEdgeList((prev) => {
+        setEdges((prev) => {
           const newtemp = [...prev, { u: v1, v: v2, w:0 }];
           return newtemp;
         });
       }
     });
   };
-  console.log(arr);
+
   const [toggle, setToggle] = useState(0);
   const handleToggle = () => {
     setToggle((toggle + 1) % 2);
@@ -145,16 +150,16 @@ function UserInput() {
                   </div>
                 </>
               )}
-              {toggle == 1 && <TempAlgo setAlgono={setAlgono} setFlag={setFlag} />}
+              {toggle == 1 && <TempAlgo  />}
             </div>
           </div>
 
           <div className="min-h-screen">
             <div className="absolute border-4 bg-teal-600 border-teal-800 h-[40rem] lg:w-[37rem] w-[45rem]  rounded-3xl">
-              {flag == 0 && <DemoGraph />}
-              {flag == 1 && <ProcessingPage flag={flag} setFlag={setFlag} />}
-              {flag == 2 && <Graph V={Vertex} edge={arr}  type={Type} />}
-              {flag == 4 && <Algorithm  V={Vertex} edge= {arr} Algono={Algono} type={Type} /> }
+              {CompToShow === "Demo" && <DemoGraph />}
+              {CompToShow == "Process" && <ProcessingPage />}
+              {CompToShow === "Graph" && <Graph />}
+              {CompToShow === "Algo" && <Algorithm /> }
             </div>
           </div>
         </div>

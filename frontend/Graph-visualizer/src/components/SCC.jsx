@@ -35,31 +35,21 @@ class DisjointSetUnion {
     }
   }
 }
-function MinSpan() {
-  const V=useContext(StoreContext).Vertex;
-  const edge=useContext(StoreContext).Edges;
-  const type= useContext(StoreContext).type;
-  const setComp=useContext(StoreContext).setComp;
-  const Dsu = new DisjointSetUnion(10);
-  edge.sort((a, b) => {
-    return a.w - b.w;
-  });
-  var arr = [];
+
+function SCC() {
+  const V= useContext(StoreContext).Vertex;
+  const edge= useContext(StoreContext).Edges;
+  const type=useContext(StoreContext).type;
+  const dsu = new DisjointSetUnion(10);
   for (let i = 0; i < edge.length; i++) {
-    if (Dsu.find(edge[i].u) != Dsu.find(edge[i].v)) {
-      Dsu.union(edge[i].u, edge[i].v);
-      arr.push(edge[i]);
-    }
+    dsu.union(edge[i].u, edge[i].v);
+    //console.log(dsu.find(edge[i].u),dsu.find(edge[i].v));
+  }
+  let arr = [];
+  for (let i = 0; i < V; i++) {
+    if (!arr.includes(dsu.find(i))) arr.push(dsu.find(i));
   }
 
-  const par = Dsu.find(0);
-  for (let i = 0; i < V; i++) {
-    if (par != Dsu.find(i)) {
-      alert("All the vertices are not accessible i.e. not a connected graph");
-      setComp("Graph");
-      break;
-    }
-  }
   const shape = useContext(StoreContext).shape;
   const vertexArray = shape.filter((it) => it.vertNo == V)[0].value;
   return (
@@ -71,15 +61,14 @@ function MinSpan() {
             x={items.x}
             y={items.y}
             key={items.no}
-            colInd={0}
+            colInd={arr.indexOf(dsu.find(items.no))}
           />
         ))}
-        {arr.map((item, ind) => {
+        {edge.map((item, ind) => {
           const vertexU = vertexArray.find((v) => v.no === item.u);
           const vertexV = vertexArray.find((v) => v.no === item.v);
           if (!vertexU || !vertexV) {
             console.error(`Vertices not found for edge: ${item}`);
-            
             return null;
           }
           return (
@@ -98,4 +87,4 @@ function MinSpan() {
     </>
   );
 }
-export default MinSpan;
+export default SCC;

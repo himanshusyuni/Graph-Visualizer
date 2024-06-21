@@ -15,7 +15,7 @@ const LabeledLine = ({ x1, y1, x2, y2, color, label }) => {
           dominantBaseline="middle"
           fill="white"
           fontWeight="600"
-          style={{ zIndex: 200 }} 
+          style={{ zIndex: 500 }} 
         >
           {label}
         </text>

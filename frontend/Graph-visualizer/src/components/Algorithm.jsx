@@ -1,13 +1,16 @@
+import { useContext } from "react";
 import MinSpan from "./MinSpan";
 import ShortDist from "./ShortDist";
-import StrComp from "./StrComp";
+import StoreContext from "../Store/StoreContext";
+import SCC from "./SCC";
 
-function Algorithm({V,edge,Algono,type}){
+function Algorithm(){
+    const AlgoToShow= useContext(StoreContext).AlgoToshow;
     return (
         <>
-        {Algono == 0 && <ShortDist />}
-        {Algono == 1 &&  <MinSpan />}
-        {Algono==3 &&  <StrComp V={V} edge={edge}  type={type}/>}
+        {AlgoToShow === "ShortestDist" && <ShortDist />}
+        {AlgoToShow === "MinSpan" &&  <MinSpan />}
+        {AlgoToShow==="SCC" &&  <SCC />}
         </>
     )
 }
