@@ -1,14 +1,17 @@
 import { TypeAnimation } from "react-type-animation";
 import { HashLoader } from 'react-spinners';
-import { useEffect, useState } from "react";
-function ProcessingPage({flag,setFlag}) {
+import { useContext, useEffect, useState } from "react";
+import StoreContext from "../Store/StoreContext";
+function ProcessingPage() {
   const [countDown, setCountDown] = useState(3);
+  const setComp=useContext(StoreContext).setComp;
+  const CompToShow= useContext(StoreContext).CompToShow;
   useEffect(() => {
     const TimeOut = setInterval(() => {
       setCountDown((precnt) => {
         if (precnt === 1) {
           clearInterval(TimeOut);
-          setFlag(2);
+          setComp("Graph");
         }
         return precnt - 1;
       });
@@ -16,7 +19,7 @@ function ProcessingPage({flag,setFlag}) {
     return () => {
       clearInterval(TimeOut);
     };
-  }, [flag]);
+  }, [CompToShow]);
   return (
     <>
       <div className="flex justify-center  mt-[40%] ml-10">

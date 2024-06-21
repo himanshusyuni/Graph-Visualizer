@@ -1,23 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import StoreContext from "../Store/StoreContext";
 
-const TempAlgo = ({setAlgono,setFlag}) => {
+const TempAlgo = () => {
   const navigate = useNavigate();
+  const setComp= useContext(StoreContext).setComp;
+  const setAlgo= useContext(StoreContext).setAlgo;
   const algo_names = [
     {
       name: "Shortest Path Algorithm",
+      key:"ShortestDist",
       link: "https://www.geeksforgeeks.org/introduction-to-dijkstras-shortest-path-algorithm/",
     },
     {
       name: "Min Spanning Tree Algorithm",
+      key:"MinSpan",
       link: "https://www.geeksforgeeks.org/kruskals-minimum-spanning-tree-algorithm-greedy-algo-2/",
     },
-    {
-      name: "Topological Sort",
-      link: "https://www.geeksforgeeks.org/topological-sorting/",
-    },
+    // {
+    //   name: "Topological Sort",
+    //   link: "https://www.geeksforgeeks.org/topological-sorting/",
+    // },
     {
       name: "Strongly Connected Components",
+      key:"SCC",
       link: "https://www.geeksforgeeks.org/strongly-connected-components/",
     },
   ];
@@ -34,8 +40,8 @@ const TempAlgo = ({setAlgono,setFlag}) => {
                 <a href={items.link} target="_blank">
                   <div className="bg-yellow-400 px-4 py-1 rounded-lg font-semibold">Learn</div>
                 </a>
-                <div className="bg-gray-300 px-4 py-1 rounded-lg font-semibold hover:cursor-pointer" onClick={()=>{setAlgono(ind);
-                  setFlag(4);
+                <div className="bg-gray-300 px-4 py-1 rounded-lg font-semibold hover:cursor-pointer" onClick={()=>{setAlgo(items.key);
+                  setComp("Algo");
                 }} >View Graph</div>
               </div>
             </div>

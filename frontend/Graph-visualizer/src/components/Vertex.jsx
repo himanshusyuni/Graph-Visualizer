@@ -19,12 +19,8 @@ function Vertex({ no, x, y, colInd }) {
     left: `${x}px`,
   };
 
-  // Ensure colInd is within bounds of colors array
-  const colorIndex = colInd % colors.length;
-
-  // Define background color based on colInd
   let bgColorClass;
-  switch (colorIndex) {
+  switch (colInd) {
     case 0:
       bgColorClass = "bg-black";
       break;
