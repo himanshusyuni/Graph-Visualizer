@@ -4,6 +4,7 @@ import Welcome from "./components/Welcome";
 import WelcomeNav from "./components/WelcomeNav";
 import TempAlgo from "./components/TempAlgo";
 import Store from "./Store/Store";
+import Error from "./components/Error";
 function App() {
   return (
     <>
@@ -23,8 +24,8 @@ function App() {
               }
             />
             <Route path="/input" element={<UserInput />} />
-
             <Route path="/algos" element={<TempAlgo />} />
+            <Route path="*" element={<Error />}/>
           </Routes>
         </Router>
       </Store>
