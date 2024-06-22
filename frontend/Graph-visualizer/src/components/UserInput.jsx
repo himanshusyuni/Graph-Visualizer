@@ -14,7 +14,7 @@ function UserInput() {
     useContext(StoreContext);
   const Type = useContext(StoreContext).type;
   const handleVertex = (e) => {
-    if (e.target.value <= 0 || e.target.value > 10) {
+    if (e.target.value <= -1 || e.target.value > 10) {
       alert("Vertex should be in range [1,10]");
       setVertex(10);
     } else {
@@ -97,7 +97,7 @@ function UserInput() {
                     <input
                       type="number"
                       value={Vertex}
-                      className="w-[4rem] xsm:w-[5rem] text-[1.1rem] xsm:text-[1.2rem] md:text-[1.4rem] border-2 border-teal-700 bg-gradient-to-r from-emerald-400 to-teal-950 focus:border-0 text-gray-800 font-semibold pl-2 rounded-md "
+                      className="w-[4rem] xsm:w-[5rem] text-[1.1rem] xsm:text-[1.2rem] md:text-[1.4rem] border-2 border-teal-700 bg-gradient-to-r from-emerald-400 to-teal-950 text-gray-800 font-semibold pl-2 rounded-md outline-none "
                       onChange={(e) => handleVertex(e)}
                     ></input>
                   </div>
