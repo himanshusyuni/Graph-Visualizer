@@ -10,15 +10,8 @@ import StoreContext from "../Store/StoreContext";
 function UserInput() {
   const edgeList = useRef([]);
   const navigate = useNavigate("");
-  const Vertex = useContext(StoreContext).Vertex;
-  const setVertex = useContext(StoreContext).setVertex;
+  const {Vertex,setVertex,setType,Edges,CompToShow,setComp,setEdges} = useContext(StoreContext);
   const Type = useContext(StoreContext).type;
-  const setType = useContext(StoreContext).setType;
-  const Edges = useContext(StoreContext).Edges;
-  const setEdges = useContext(StoreContext).setEdges;
-  const CompToShow = useContext(StoreContext).CompToShow;
-  const setComp = useContext(StoreContext).setComp;
-
   const handleVertex = (e) => {
     if (e.target.value <= 0 || e.target.value > 10) {
       alert("Vertex should be in range [1,10]");
@@ -58,7 +51,7 @@ function UserInput() {
   return (
     <>
     <div className=" bg-[#fbfae5] h-full w-full flex flex-col shadow-lg"  >
-    <div className="font-bold text-center   underline text-rose-900 mb-8  flex flex col justify-center items-center text-teal-400 bg-[#0b2834] font-serif   italic h-full w-full  text-[2rem]">
+    <div className="font-bold text-center   underline mb-8   flex col justify-center items-center text-teal-400 bg-[#0b2834] font-serif   italic h-full w-full  text-[2rem]">
     Graph Visualizer     <img className="h-11 w-16 mx-1 "
           src="pic1.svg" alt="" /> 
           
@@ -104,7 +97,7 @@ function UserInput() {
                     <input
                       type="number"
                       value={Vertex}
-                      className="w-[5rem] text-[1.2rem] border-2 border-teal-700 bg-gradient-to-r from-emerald-400 to-teal-950 focus:border-0 pl-2 rounded-md"
+                      className="w-[5rem] text-[1.4rem] border-2 border-teal-700 bg-gradient-to-r from-emerald-400 to-teal-950 focus:border-0 text-white font-semibold pl-2 rounded-md "
                       onChange={(e) => handleVertex(e)}
                     ></input>
                   </div>
@@ -117,7 +110,7 @@ function UserInput() {
                     <div class="flex border-[0.15rem] border-teal-700 bg-[#fbfae5] rounded-md overflow-hidden">
                       <button
                         className={` text-black font-bold p-2 border-r-2 border-black  active:bg-gradient-to-r from-emerald-400 to-teal-600 ${
-                          Type == 0 && "bg-gradient-to-r from-emerald-400 to-teal-950"
+                          Type == 0 && "bg-gradient-to-r from-emerald-500 to-teal-950  text-white"
                         } `}
                         onClick={() => setType(0)}
                       >
@@ -125,7 +118,7 @@ function UserInput() {
                       </button>
                       <button
                         className={` text-black font-bold p-2  active:bg-gradient-to-r from-emerald-400 to-teal-600 ${
-                          Type == 1 && "bg-gradient-to-r from-emerald-400 to-teal-950"
+                          Type == 1 && "bg-gradient-to-r from-emerald-500 to-teal-950 text-white"
                         }  `}
                         onClick={() => setType(1)}
                       >
@@ -138,7 +131,7 @@ function UserInput() {
                       Edge List:{" "}
                     </p>
                     <textarea
-                      className="resize-none rounded-2xl text-lg p-2 bg-gradient-to-r from-emerald-400 to-teal-950  border-[0.18rem] border-teal-700 outline-none w-[60%] placeholder-gray-500"
+                      className="resize-none rounded-2xl text-lg p-2 bg-gradient-to-r from-emerald-400 to-teal-900  border-[0.18rem] border-teal-500 outline-none w-[60%] placeholder-gray-500 "
                       rows={5}
                       cols={30}
                       ref={edgeList}
@@ -168,7 +161,7 @@ function UserInput() {
           </div>
 
           <div className="min-h-screen shadow-lg rounded-3xl overflow-hidden mb-2">
-            <div className=" border-4 border-black bg-gradient-to-r from-teal-900 to-teal-600 h-[30rem] md:h-[40rem] xlg:w-[40rem] md:w-[45rem] w-[30rem] rounded-3xl ">
+            <div className=" border-4 border-black bg-gradient-to-r from-teal-800 to-teal-600 h-[30rem] md:h-[40rem] xlg:w-[40rem] md:w-[45rem] w-[30rem] rounded-3xl ">
               {CompToShow === "Demo" && <DemoGraph />}
               {CompToShow == "Process" && <ProcessingPage />}
               {CompToShow === "Graph" && <Graph />}
