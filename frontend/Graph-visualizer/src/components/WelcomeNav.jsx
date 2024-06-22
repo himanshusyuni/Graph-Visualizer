@@ -3,8 +3,11 @@ import { FaGithub } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const WelcomeNav = () => {
+  const navigate = useNavigate("");
+
   const [toggle, setToggle] = useState(0);
   const handleMenuClick = () => {
     setToggle(toggle === 0 ? 1 : 0);
@@ -20,19 +23,20 @@ const WelcomeNav = () => {
         }
       >
         <ul className="flex flex-col items-center gap-4">
-          <li className="hover:text-orange-700">
-            <a
-              href="https://github.com/himanshusyuni/Graph-Visualizer"
-              target="_blank"
-            >
-              Github
-            </a>
-          </li>
-          <li className="hover:text-orange-700 hover:cursor-pointer">Home</li>
-          <li className="hover:text-orange-700 hover:cursor-pointer">About</li>
-          <li className="hover:text-orange-700 hover:cursor-pointer">
-            Contact Us
-          </li>
+          <a
+            href="https://github.com/himanshusyuni/Graph-Visualizer"
+            target="_blank"
+            onClick={() => handleMenuClick()}
+          >
+            <li className="hover:text-orange-700">Github</li>
+          </a>
+
+          <a href="#home" onClick={() => handleMenuClick()}>
+            <li className="hover:text-orange-700">Home</li>
+          </a>
+          <button onClick={() => navigate("/input")}>
+            <li className="hover:text-orange-700">Create Graph</li>
+          </button>
         </ul>
       </div>
       <div className="flex justify-between px-6 sm:px-10 py-5 md:px-14 items-center">

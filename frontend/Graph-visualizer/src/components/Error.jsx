@@ -4,24 +4,27 @@ function Error() {
   const navigate = useNavigate();
   return (
     <>
-      <div className=" min-h-screen  justify-center flex flex-col items-center">
-        <div className="  flex justify-center items-center ">
-          <h1 className="text-9xl text-red-500 font-bold  font-weight  justify-center flex col items-center  mr-24 -translate-x-1 mx-24  tanslate-x-1/2">
-            404
-          </h1>
+      <div className=" min-h-screen  justify-center flex flex-col items-center bg-black overflow-x-auto">
+        <div className="  flex justify-center items-center text-red-600 text-[5rem] lg:text-[8rem] font-bold ">
+          <p>404</p>
         </div>
 
-        <div>
-          <h1 className="text-3xl mt-5 mx-32">
-            Oops! The page you are looking for could not be found 😢
-          </h1>
+        <div class="flex text-center bg-[#fbfae5] mx-10 p-5 text-[1.15rem] lg:text-[1.3rem] rounded-xl">
+          <p>
+            Oops! This is not the web page you are looking for. Please check you
+            path again.
+          </p>
         </div>
         <div>
-          <img className="h-24 w-40 mt-5  " src="pic1.svg" alt="" />
+          <img
+            className="h-24 w-40 mt-5  "
+            src="/images/display-graph.svg"
+            alt=""
+          />
         </div>
         <div>
           <button
-            className="mt-8 px-6 py-3 bg-blue-500 text-white rounded hover:bg-blue-700"
+            className="mt-8 px-6 py-3 bg-blue-500 text-white rounded-xl hover:bg-blue-700"
             onClick={() => {
               navigate("");
             }}

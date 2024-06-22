@@ -49,10 +49,10 @@ function DemoGraph() {
     <>
       <div className="relative md:mt-[20%] md:ml-[10%] -ml-[10%] mt-[15%] xlg:ml-[6%]">
         {vertex.map((item) => (
-          <Vertex x={item.x} y={item.y} no={item.no} key={item.no}  colInd={0}/>
+          <Vertex x={item.x} y={item.y} no={item.no} key={item.no} colInd={0} />
         ))}
 
-        {edges.map((item,ind) => (
+        {edges.map((item, ind) => (
           <LabeledLine
             x1={vertex.filter((items) => items.no == item.u)[0].x + 20}
             x2={vertex.filter((items) => items.no == item.v)[0].x + 20}

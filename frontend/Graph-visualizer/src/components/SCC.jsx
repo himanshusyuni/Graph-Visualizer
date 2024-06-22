@@ -37,9 +37,9 @@ class DisjointSetUnion {
 }
 
 function SCC() {
-  const V= useContext(StoreContext).Vertex;
-  const edge= useContext(StoreContext).Edges;
-  const type=useContext(StoreContext).type;
+  const V = useContext(StoreContext).Vertex;
+  const edge = useContext(StoreContext).Edges;
+  const type = useContext(StoreContext).type;
   const dsu = new DisjointSetUnion(10);
   for (let i = 0; i < edge.length; i++) {
     dsu.union(edge[i].u, edge[i].v);

@@ -1,8 +1,6 @@
 import React from "react";
 
 function Vertex({ no, x, y, colInd }) {
-
-
   const style = {
     top: `${y}px`,
     left: `${x}px`,

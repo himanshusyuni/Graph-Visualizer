@@ -52,11 +52,11 @@ class Graph {
       }
       previous[vertex] = null;
     }
-    
+
     while (nodes.values.length) {
       smallest = nodes.dequeue().val;
       if (smallest == finish) {
-        while (previous[smallest]!==null) {
+        while (previous[smallest] !== null) {
           path.push(smallest);
           smallest = previous[smallest];
         }
@@ -88,13 +88,13 @@ function createGraphFromEdges(edges) {
   edges.forEach(({ u, v, w }) => {
     graph.addVertex(parseInt(u));
     graph.addVertex(parseInt(v));
-    graph.addEdge(parseInt(u), parseInt(v),parseInt(w));
+    graph.addEdge(parseInt(u), parseInt(v), parseInt(w));
   });
   return graph;
 }
 
 function ShortDist() {
-  const source =parseInt(useContext(StoreContext).src);
+  const source = parseInt(useContext(StoreContext).src);
   const destination = parseInt(useContext(StoreContext).destination);
   const V = useContext(StoreContext).Vertex;
   const edge = useContext(StoreContext).Edges;
