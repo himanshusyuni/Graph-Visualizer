@@ -14,7 +14,7 @@ function UserInput() {
     useContext(StoreContext);
   const Type = useContext(StoreContext).type;
   const handleVertex = (e) => {
-    if (e.target.value <= 0 || e.target.value > 10) {
+    if (e.target.value <= -1 || e.target.value > 10) {
       alert("Vertex should be in range [1,10]");
       setVertex(10);
     } else {
@@ -65,7 +65,7 @@ function UserInput() {
           <div className="w-[20rem] xsm:w-[30rem] md:w-[45rem] xlg:w-[40rem]  flex flex-col gap-5 h-[30rem] md:h-[40rem] rounded-3xl border-[0.3rem]  border-teal-950 overflow-auto">
             <div className="bg-[#fbfae5] p-2 h-[40rem]">
               <div className="flex justify-center mt-4">
-                <div className="bg-gradient-to-r from-teal-900 to-teal-600 flex md:gap-3 px-1 md:px-3 py-1 md:py-2 rounded-full border-2 border-black text-[0.7rem] xsm:text-[0.8rem] md:text-[1.1rem] text-white font-bold shadow-lg">
+                <div className="bg-gradient-to-r from-teal-900 to-teal-600 flex md:gap-3 px-1 md:px-3 py-1 md:py-2 rounded-full border-2 border-black text-[0.8rem] md:text-[1.1rem] text-white font-bold shadow-lg">
                   <div
                     className={
                       (toggle === 0 &&
@@ -97,7 +97,7 @@ function UserInput() {
                     <input
                       type="number"
                       value={Vertex}
-                      className="w-[4rem] xsm:w-[5rem] text-[1.1rem] xsm:text-[1.2rem] md:text-[1.4rem] border-2 border-teal-700 bg-gradient-to-r from-emerald-400 to-teal-950 focus:border-0 text-gray-800 font-semibold pl-2 rounded-md "
+                      className="w-[4rem] xsm:w-[5rem] text-[1.1rem] xsm:text-[1.2rem] md:text-[1.4rem] border-2 border-teal-700 bg-gradient-to-r from-emerald-400 to-teal-950 text-gray-800 font-semibold pl-2 rounded-md outline-none "
                       onChange={(e) => handleVertex(e)}
                     ></input>
                   </div>

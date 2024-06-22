@@ -25,15 +25,15 @@ const TempAlgo = () => {
       <div className="flex justify-center mt-8 h-[30rem]">
         <div className=" py-5 px-2 overflow-auto overflow-x-auto flex flex-col gap-5 h-[30rem] w-[40rem]">
           <div className="bg-gradient-to-r from-emerald-400 to-teal-600 rounded-2xl hover:scale-102 duration-200">
-            <div className="bg-gradient-to-r from-emerald-400 to-teal-600 px-8 py-5 rounded-xl text-[1.3rem] text-black  font-semibold">
+            <div className="bg-gradient-to-r from-emerald-400 to-teal-600 px-6 py-3 xsm:px-8 xsm:py-5 rounded-xl text-[1.1rem] xsm:text-[1.3rem] text-black  font-semibold">
               <p>Shortest Path Algorithm</p>
             </div>
-            <div className="px-8 flex justify-between mb-4 text-[1.1rem]">
+            <div className="px-3 xsm:px-8 flex justify-between items-center mb-4 text-[0.9rem] xsm:text-[1.1rem]">
               <a
                 href="https://www.geeksforgeeks.org/introduction-to-dijkstras-shortest-path-algorithm/"
                 target="_blank"
               >
-                <div className="bg-yellow-400 px-4 py-1 rounded-lg font-semibold">
+                <div className="bg-yellow-400 px-2 xsm:px-4 py-1 rounded-lg font-semibold">
                   Learn
                 </div>
               </a>
@@ -41,7 +41,7 @@ const TempAlgo = () => {
                 <p>U</p>
                 <input
                   type="number"
-                  className="w-[3rem] outline-none rounded-md px-[0.4rem] py-[0.3rem] text-[0.9rem] border-2 border-black bg-[#fbfae5]"
+                  className="w-[2rem] xsm:w-[3rem] outline-none rounded-md px-[0.4rem] py-[0.3rem] text-[0.5rem] xsm:text-[0.9rem] border-2 border-black bg-[#fbfae5]"
                   placeholder="0"
                   onChange={(e) => setSrc(e.target.value)}
                 />
@@ -50,13 +50,13 @@ const TempAlgo = () => {
                 <p>V</p>
                 <input
                   type="number"
-                  className="w-[3rem] outline-none rounded-md px-[0.4rem] py-[0.3rem] text-[0.9rem] border-2 border-black bg-[#fbfae5]"
+                  className="w-[2rem] xsm:w-[3rem] outline-none rounded-md px-[0.4rem] py-[0.3rem] text-[0.5rem] xsm:text-[0.9rem] border-2 border-black bg-[#fbfae5]"
                   placeholder="3"
                   onChange={(e) => setDest(e.target.value)}
                 />
               </div>
               <div
-                className="bg-gray-300 px-4 py-1 rounded-lg font-semibold hover:cursor-pointer"
+                className="bg-gray-300 px-2 xsm:px-4 py-1 rounded-lg font-semibold hover:cursor-pointer"
                 onClick={() => {
                   setAlgo("ShortestDist");
                   setComp("Algo");
@@ -68,17 +68,17 @@ const TempAlgo = () => {
           </div>
           {algo_names.map((items, ind) => (
             <div className="bg-gradient-to-r from-emerald-400 to-teal-600 rounded-2xl hover:scale-102 duration-200">
-              <div className="bg-gradient-to-r from-emerald-400 to-teal-600 px-8 py-5 rounded-xl text-[1.3rem] text-black  font-semibold">
+              <div className="bg-gradient-to-r from-emerald-400 to-teal-600 px-6 py-3 xsm:px-8 xsm:py-5 rounded-xl text-[1.1rem] xsm:text-[1.3rem] text-black  font-semibold">
                 <p>{items.name}</p>
               </div>
-              <div className="px-8 flex justify-between mb-4 text-[1.1rem]">
+              <div className="px-8 flex justify-between mb-4 text-[0.9rem] xsm:text-[1.1rem]">
                 <a href={items.link} target="_blank">
-                  <div className="bg-yellow-400 px-4 py-1 rounded-lg font-semibold">
+                  <div className="bg-yellow-400 px-2 xsm:px-4 py-1 rounded-lg font-semibold">
                     Learn
                   </div>
                 </a>
                 <div
-                  className="bg-gray-300 px-4 py-1 rounded-lg font-semibold hover:cursor-pointer"
+                  className="bg-gray-300 px-2 xsm:px-4 py-1 rounded-lg font-semibold hover:cursor-pointer"
                   onClick={() => {
                     setAlgo(items.key);
                     setComp("Algo");
