@@ -96,7 +96,9 @@ function UserInput() {
               {toggle == 0 && (
                 <>
                   <div className="flex pt-10 pl-2 ">
+
                     <p className="pr-5 text-[1.2rem] md:text-[1.5rem] text-[#2a3b68] bg-clip-text   font-semibold shadow-lg">
+
                       Number of Vertex (Max upto 10) :
                     </p>
                     <input
@@ -107,7 +109,9 @@ function UserInput() {
                     ></input>
                   </div>
                   <div className="flex pt-8 pl-2">
+
                     <p className="pr-5 text-[1.2rem] md:text-[1.5rem] text-[#2a3b68] bg-clip-text   font-semibold shadow-lg">
+
                       Type of Graph :{" "}
                     </p>
                     <div class="flex border-[0.15rem] border-teal-700 bg-[#fbfae5] rounded-md overflow-hidden">
