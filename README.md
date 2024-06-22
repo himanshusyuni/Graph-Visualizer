@@ -55,7 +55,7 @@ Graph Visualizer is a web application that allows users to create and visualize 
 
 1. **Clone the repository**:
    ```sh
-   git clone https://github.com/Harshtayal2005/Graph-Visualizer.git
+   git clone https://github.com/himanshusyuni/Graph-Visualizer.git
    cd Graph-Visualizer
    cd frontend
    cd Graph-visualizer
@@ -74,4 +74,4 @@ Graph Visualizer is a web application that allows users to create and visualize 
 
 
 ### Contact
-- For any queries or suggestions, feel free to reach out at: harshtayal2005@gmail.com
+- For any queries or suggestions, feel free to reach out at: harshtayal2005@gmail.com or himanshusyuni123@gmail.com
