@@ -29,18 +29,31 @@ const TempAlgo = () => {
               <p>Shortest Path Algorithm</p>
             </div>
             <div className="px-8 flex justify-between mb-4 text-[1.1rem]">
-              <a href="https://www.geeksforgeeks.org/introduction-to-dijkstras-shortest-path-algorithm/" target="_blank">
+              <a
+                href="https://www.geeksforgeeks.org/introduction-to-dijkstras-shortest-path-algorithm/"
+                target="_blank"
+              >
                 <div className="bg-yellow-400 px-4 py-1 rounded-lg font-semibold">
                   Learn
                 </div>
               </a>
               <div className="flex gap-1 items-center">
                 <p>U</p>
-                <input type="number" className="w-[3rem] outline-none rounded-md px-[0.4rem] py-[0.3rem] text-[0.9rem] border-2 border-black bg-[#fbfae5]" placeholder="0" onChange={(e) => setSrc(e.target.value)} />
+                <input
+                  type="number"
+                  className="w-[3rem] outline-none rounded-md px-[0.4rem] py-[0.3rem] text-[0.9rem] border-2 border-black bg-[#fbfae5]"
+                  placeholder="0"
+                  onChange={(e) => setSrc(e.target.value)}
+                />
               </div>
               <div className="flex gap-1 items-center">
                 <p>V</p>
-                <input type="number" className="w-[3rem] outline-none rounded-md px-[0.4rem] py-[0.3rem] text-[0.9rem] border-2 border-black bg-[#fbfae5]" placeholder="3" onChange={(e) => setDest(e.target.value)} />
+                <input
+                  type="number"
+                  className="w-[3rem] outline-none rounded-md px-[0.4rem] py-[0.3rem] text-[0.9rem] border-2 border-black bg-[#fbfae5]"
+                  placeholder="3"
+                  onChange={(e) => setDest(e.target.value)}
+                />
               </div>
               <div
                 className="bg-gray-300 px-4 py-1 rounded-lg font-semibold hover:cursor-pointer"

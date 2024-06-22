@@ -14,8 +14,11 @@ function App() {
             <Route
               path="/"
               element={
-                <div className="relative min-h-screen">
-                  <div className="absolute bg-[url(images/Designer.png)] md:bg-center-bottom-30 sm:bg-center-bottom-20 bg-center bg-cover inset-0"></div>
+                <div
+                  className="relative min-h-screen overflow-x-auto"
+                  id="home"
+                >
+                  <div className="absolute bg-[url(/images/Designer.png)] md:bg-center-bottom-30 sm:bg-center-bottom-20 bg-center bg-cover inset-0"></div>
                   <div className="relative z-10">
                     <WelcomeNav />
                     <Welcome />
@@ -25,7 +28,7 @@ function App() {
             />
             <Route path="/input" element={<UserInput />} />
             <Route path="/algos" element={<TempAlgo />} />
-            <Route path="*" element={<Error />}/>
+            <Route path="*" element={<Error />} />
           </Routes>
         </Router>
       </Store>

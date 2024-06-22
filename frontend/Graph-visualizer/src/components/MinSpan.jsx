@@ -36,10 +36,10 @@ class DisjointSetUnion {
   }
 }
 function MinSpan() {
-  const V=useContext(StoreContext).Vertex;
-  const edge=useContext(StoreContext).Edges;
-  const type= useContext(StoreContext).type;
-  const setComp=useContext(StoreContext).setComp;
+  const V = useContext(StoreContext).Vertex;
+  const edge = useContext(StoreContext).Edges;
+  const type = useContext(StoreContext).type;
+  const setComp = useContext(StoreContext).setComp;
   const Dsu = new DisjointSetUnion(10);
   edge.sort((a, b) => {
     return a.w - b.w;
@@ -79,7 +79,7 @@ function MinSpan() {
           const vertexV = vertexArray.find((v) => v.no === item.v);
           if (!vertexU || !vertexV) {
             console.error(`Vertices not found for edge: ${item}`);
-            
+
             return null;
           }
           return (
