@@ -14,7 +14,9 @@ function UserInput() {
     useContext(StoreContext);
   const Type = useContext(StoreContext).type;
   const handleVertex = (e) => {
-    if (e.target.value <= -1 || e.target.value > 10) {
+    if (!e.target.value) {
+      return;
+    } else if (e.target.value <= 0 || e.target.value > 10) {
       alert("Vertex should be in range [1,10]");
       setVertex(10);
     } else {
@@ -51,6 +53,7 @@ function UserInput() {
 
   return (
     <>
+
       <div className=" bg-[#fbfae5] h-full w-full flex flex-col shadow-lg gap-8 overflow-x-auto">
         <div className="font-bold  underline py-3 flex justify-center items-center text-teal-400 bg-[#0b2834] font-serif   italic w-full lg:gap-2  text-[1.4rem] xsm:text-[1.6rem] md:text-[1.8rem] lg:text-[2rem]">
           <p>Graph Visualizer </p>
@@ -59,6 +62,7 @@ function UserInput() {
             src="/images/display-graph.svg"
             alt=""
           />
+
         </div>
 
         <div className="flex flex-col items-center xlg:flex-row px-10 w-full min-h-screen gap-10 xlg:gap-10 xlg:justify-between xlg:items-start shadow-lg">
@@ -92,11 +96,13 @@ function UserInput() {
                 <>
                   <div className="flex pt-10 pl-2 gap-2 items-center">
                     <p className="pr-5 text-[0.95rem] xsm:text-[1.2rem] md:text-[1.5rem] text-[#2a3b68] bg-clip-text   font-semibold shadow-lg">
+
                       Number of Vertex (Max upto 10) :
                     </p>
                     <input
                       type="number"
-                      value={Vertex}
+
+                      placeholder="10"
                       className="w-[4rem] xsm:w-[5rem] text-[1.1rem] xsm:text-[1.2rem] md:text-[1.4rem] border-2 border-teal-700 bg-gradient-to-r from-emerald-400 to-teal-950 text-gray-800 font-semibold pl-2 rounded-md outline-none "
                       onChange={(e) => handleVertex(e)}
                     ></input>
@@ -116,7 +122,9 @@ function UserInput() {
                         Weighted
                       </button>
                       <button
+
                         className={` text-black text-[0.8rem] md:text-[1.2rem] font-bold p-1 md:p-2  active:bg-gradient-to-r from-emerald-400 to-teal-600 ${
+
                           Type == 1 &&
                           "bg-gradient-to-r from-emerald-500 to-teal-950 text-white"
                         }  `}
