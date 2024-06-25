@@ -10,10 +10,13 @@ import StoreContext from "../Store/StoreContext";
 function UserInput() {
   const edgeList = useRef([]);
   const navigate = useNavigate("");
-  const {Vertex,setVertex,setType,Edges,CompToShow,setComp,setEdges} = useContext(StoreContext);
+  const { Vertex, setVertex, setType, Edges, CompToShow, setComp, setEdges } =
+    useContext(StoreContext);
   const Type = useContext(StoreContext).type;
   const handleVertex = (e) => {
-    if (e.target.value <= 0 || e.target.value > 10) {
+    if (!e.target.value) {
+      return;
+    } else if (e.target.value <= 0 || e.target.value > 10) {
       alert("Vertex should be in range [1,10]");
       setVertex(10);
     } else {
@@ -50,15 +53,12 @@ function UserInput() {
 
   return (
     <>
-    <div className=" bg-[#fbfae5] h-full w-full flex flex-col shadow-lg"  >
-    <div className="font-bold text-center   underline mb-8   flex col justify-center items-center text-teal-400 bg-[#0b2834] font-serif   italic h-full w-full  text-[2rem]">
-    Graph Visualizer     <img className="h-11 w-16 mx-1 "
-          src="pic1.svg" alt="" /> 
-          
+      <div className=" bg-[#fbfae5] h-full w-full flex flex-col shadow-lg">
+        <div className="font-bold text-center   underline mb-8   flex col justify-center items-center text-teal-400 bg-[#0b2834] font-serif   italic h-full w-full  text-[2rem]">
+          Graph Visualizer{" "}
+          <img className="h-11 w-16 mx-1 " src="pic1.svg" alt="" />
         </div>
-        
-   
-       
+
         <div className="flex flex-col items-center xlg:flex-row px-10 w-full min-h-screen gap-10 xlg:gap-10 xlg:justify-between xlg:items-start shadow-lg">
           <div className="w-[30rem] md:w-[45rem] xlg:w-[40rem]  flex flex-col gap-5 h-[30rem] md:h-[40rem] rounded-3xl border-[0.3rem]  border-teal-950 overflow-auto">
             <div className="bg-[#fbfae5] p-2 h-[40rem]">
@@ -89,28 +89,25 @@ function UserInput() {
               {toggle == 0 && (
                 <>
                   <div className="flex pt-10 pl-2 ">
-
                     <p className="pr-5 text-[1.2rem] md:text-[1.5rem] text-[#2a3b68] bg-clip-text   font-semibold shadow-lg">
-
                       Number of Vertex (Max upto 10) :
                     </p>
                     <input
                       type="number"
-                      value={Vertex}
+                      placeholder="10"
                       className="w-[5rem] text-[1.4rem] border-2 border-teal-700 bg-gradient-to-r from-emerald-400 to-teal-950 focus:border-0 text-white font-semibold pl-2 rounded-md "
                       onChange={(e) => handleVertex(e)}
                     ></input>
                   </div>
                   <div className="flex pt-8 pl-2">
-
                     <p className="pr-5 text-[1.2rem] md:text-[1.5rem] text-[#2a3b68] bg-clip-text   font-semibold shadow-lg">
-
                       Type of Graph :{" "}
                     </p>
                     <div class="flex border-[0.15rem] border-teal-700 bg-[#fbfae5] rounded-md overflow-hidden">
                       <button
                         className={` text-black font-bold p-2 border-r-2 border-black  active:bg-gradient-to-r from-emerald-400 to-teal-600 ${
-                          Type == 0 && "bg-gradient-to-r from-emerald-500 to-teal-950  text-white"
+                          Type == 0 &&
+                          "bg-gradient-to-r from-emerald-500 to-teal-950  text-white"
                         } `}
                         onClick={() => setType(0)}
                       >
@@ -118,7 +115,8 @@ function UserInput() {
                       </button>
                       <button
                         className={` text-black font-bold p-2  active:bg-gradient-to-r from-emerald-400 to-teal-600 ${
-                          Type == 1 && "bg-gradient-to-r from-emerald-500 to-teal-950 text-white"
+                          Type == 1 &&
+                          "bg-gradient-to-r from-emerald-500 to-teal-950 text-white"
                         }  `}
                         onClick={() => setType(1)}
                       >
