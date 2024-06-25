@@ -2,7 +2,6 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-   
     extend: {
       fontFamily: {
         "dancing-script": ["Dancing script", "cursive"],
@@ -36,8 +35,9 @@ export default {
         },
       },
       screens: {
-        'xlg': '1260px'
-      }
+        xlg: "1260px",
+        xsm: "540px",
+      },
     },
   },
   plugins: [],
