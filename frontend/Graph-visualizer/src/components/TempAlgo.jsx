@@ -15,9 +15,9 @@ const TempAlgo = () => {
       link: "https://www.geeksforgeeks.org/kruskals-minimum-spanning-tree-algorithm-greedy-algo-2/",
     },
     {
-      name: "Strongly Connected Components",
+      name: "Connected Components",
       key: "SCC",
-      link: "https://www.geeksforgeeks.org/strongly-connected-components/",
+      link: "https://www.geeksforgeeks.org/connected-component-definition-meaning-in-dsa/",
     },
   ];
   return (
