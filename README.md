@@ -38,7 +38,7 @@ Graph Visualizer is a web application that allows users to create and visualize 
 
 - **Shortest Path Algorithm**: Finds the shortest paths from a single source vertex to all other vertices in a weighted graph.
 - **Minimum Spanning Tree (MST)**: Finds the minimum spanning tree of a connected, undirected graph.
-- **Strongly Connected Components (SCC)**: Finds the strongly connected components in a directed graph.
+- **Connected Components (SCC)**: Finds the connected components in a undirected graph.
 
 ## Getting Started
 
