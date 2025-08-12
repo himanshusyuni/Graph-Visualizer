@@ -23,13 +23,7 @@ const WelcomeNav = () => {
         }
       >
         <ul className="flex flex-col items-center gap-4">
-          <a
-            href="https://github.com/himanshusyuni/Graph-Visualizer"
-            target="_blank"
-            onClick={() => handleMenuClick()}
-          >
-            <li className="hover:text-orange-700">Github</li>
-          </a>
+         
 
           <a href="#home" onClick={() => handleMenuClick()}>
             <li className="hover:text-orange-700">Home</li>
@@ -45,19 +39,7 @@ const WelcomeNav = () => {
           <span className="text-gray-400 font-bold">GV</span>
           <span className="text-green-600 font-bold">OP/&gt;</span>
         </div>
-        <a
-          href="https://github.com/himanshusyuni/Graph-Visualizer"
-          target="_blank"
-        >
-          <button className="hidden sm:flex gap-1 bg-black border border-black sm:py-[0.8rem] sm:px-[1.2rem] px-[0.8rem] py-[0.4rem] rounded-3xl items-center justify-center text-white sm:text-[1.2rem] text-[1rem]">
-            <div>
-              <FaGithub size={25} />
-            </div>
-            <div>
-              <span>GitHub</span>
-            </div>
-          </button>
-        </a>
+        
         <GiHamburgerMenu
           className={
             (toggle === 1 && `hidden`) ||
